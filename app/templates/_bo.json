@@ -1,0 +1,22 @@
+{
+  "name": "<%= _.slugify(name) %>",
+  "version": "<%= version %>",
+  "description": "<%= desc %>",
+  "repository": {
+    "type": "git",
+    "url": "<%= repo %>"
+  },
+  "username": "<%= author %>",
+  "GruntConfig": {
+    "lessPath": "./index.less",
+    "jsPath": "./index.js",
+    "outputCss": "public/demo/tmp/pkg-tmp.css",
+    "outputJs": "public/demo/tmp/pkg-tmp.js"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "<%= _.slugify(name) %>"
+  ],
+  "license": "MIT"
+}
