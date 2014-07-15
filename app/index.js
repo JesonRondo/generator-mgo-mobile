@@ -92,22 +92,10 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
         name: 'type',
         message: 'What\'s type do you want to choices:',
         choices: [
-          'default',
-          'ushop',
-          'empty',
-          'cps'
+          'buyer',
+          'empty'
         ],
         default: this.params.type
-      }, {
-        type: 'list',
-        name: 'sizetype',
-        message: 'What\'s sizetype do you want to choices:',
-        choices: [
-          '1200&960',
-          '1200',
-          '960'
-        ],
-        default: this.params.sizetype
       }, {
         name: 'version',
         message: 'Enter the version of your cute module:',
@@ -141,21 +129,18 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
     this.mkdir(mpath);
 
     switch(this.type) {
-      case 'ushop':
-        this.template('tpl/ushop/index.php', mpath + '/index.php');
-        break;
 
       case 'empty':
         this.template('tpl/empty/index.php', mpath + '/index.php');
         break;
 
-      case 'cps':
-        this.template('tpl/cps/index.php', mpath + '/index.php');
+      case 'buyer':
+        this.template('tpl/buyer/index.php', mpath + '/index.php');
         break;
 
-      default:
-        this.template('tpl/default/index.php', mpath + '/index.php');
-        break;
+      // default:
+      //   this.template('tpl/default/index.php', mpath + '/index.php');
+      //   break;
     }
 
     this.template('content.php', mpath + '/content.php');
