@@ -29,8 +29,11 @@
     </style>
 </head>
 <body>
+    
     <?php include($GLOBALS['ROOTPATH'] . '/common_mobile/template/header_buyer/content.php'); ?>
 
+    <?php include(dirname(__FILE__) . '/data.php'); ?>
+    
     <?php include(dirname(__FILE__) . '/content.php'); ?>
 
     <?php include($GLOBALS['ROOTPATH'] . '/common/conf/require.php'); ?>

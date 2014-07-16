@@ -28,6 +28,8 @@
 </head>
 <body>
 
+    <?php include(dirname(__FILE__) . '/data.php'); ?>
+    
     <?php include(dirname(__FILE__) . '/content.php'); ?>
    
     <?php include($GLOBALS['ROOTPATH'] . '/common/conf/require.php'); ?>
