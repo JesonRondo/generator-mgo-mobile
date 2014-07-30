@@ -137,6 +137,11 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
       case 'buyer':
         this.template('tpl/buyer/index.php', mpath + '/index.php');
         break;
+        
+      case 'h5x6':
+        this.template('tpl/default/index.php', mpath + '/index.php');
+      break;
+
 
       // default:
       //   this.template('tpl/default/index.php', mpath + '/index.php');
