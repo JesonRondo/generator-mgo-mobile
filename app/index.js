@@ -31,7 +31,7 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
       ,'path': ''
       ,'desc': 'mogu module'
       ,'repo': 'http://gitlab.mogujie.org'
-      ,'type': 'default'
+      ,'type': 'h5x6'
       ,'author': 'mogu f2e'
       ,'version': '1.0.0'
       ,'sizetype': '1200&960'
@@ -92,6 +92,7 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
         name: 'type',
         message: 'What\'s type do you want to choices:',
         choices: [
+          'h5x6',
           'buyer',
           'empty'
         ],
@@ -137,10 +138,10 @@ var MgoGenerator = module.exports = yeoman.generators.Base.extend({
       case 'buyer':
         this.template('tpl/buyer/index.php', mpath + '/index.php');
         break;
-        
+
       case 'h5x6':
         this.template('tpl/default/index.php', mpath + '/index.php');
-      break;
+        break;
 
 
       // default:
