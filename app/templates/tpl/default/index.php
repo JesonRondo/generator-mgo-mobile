@@ -12,57 +12,42 @@
 <head>
     <meta charset="UTF-8" />
     <title><%= _.slugify(name) %> - MOGU F2E</title>
+    <meta name="apple-mobile-web-app-title" content="蘑菇街H5" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" media="(device-height: 568px)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="grey" />
+    <link rel="apple-touch-icon-precomposed" href="/img/imgwap/icon/57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/imgwap/icon/114x114.png" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px)" href="/img/imgwap/startup/640x920.jpg" />
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px)" href="/img/imgwap/startup/640x1096.jpg" />
+
     <style>
-        <?php echo $less->compileFile($GLOBALS['ROOTPATH'] . '/common/style/reset.less'); ?>
-        <?php echo $less->compileFile($GLOBALS['ROOTPATH'] . '/common/style/global.less'); ?>
-        <?php echo $less->compileFile($GLOBALS['ROOTPATH'] . '/common/template/header/index.less'); ?>
+        <?php echo $less->compileFile($GLOBALS['ROOTPATH'] . '/common/template/header_x6/index.less'); ?>
         <?php echo $less->compileFile('./index.less'); ?>
-        <?php echo $less->compileFile($GLOBALS['ROOTPATH'] . '/common/template/footer/index.less'); ?>
     </style>
 </head>
 <body>
-
+    
     <?php include(dirname(__FILE__) . '/data.php'); ?>
-
-    <% if (sizetype.indexOf('1200') >= 0) { %>
-    <div class="ht1200">
-    <% } else { %>
-    <div class="ht960">
-    <% } %>
-        <?php include($GLOBALS['ROOTPATH'] . '/common/template/header/content.php'); ?>
-    </div>
-
-    <% if (sizetype.indexOf('1200') >= 0) { %>
-    <div class="fm1200">
-        <?php include(dirname(__FILE__) . '/content.php'); ?>
-    </div>
-    <% } %>
-
-    <% if (sizetype.indexOf('960') >= 0) { %>
-    <div class="fm960 media_screen_960">
-        <?php include(dirname(__FILE__) . '/content.php'); ?>
-    </div>
-    <% } %>
-
-    <% if (sizetype.indexOf('1200') >= 0) { %>
-    <div class="ht1200">
-    <% } else { %>
-    <div class="ht960">
-    <% } %>
-        <?php include($GLOBALS['ROOTPATH'] . '/common/template/footer/content.php'); ?>
+    
+    <div id="screen_wrap">
+    
+        <?php include($GLOBALS['ROOTPATH'] . '/common/template/header_x6/content.php'); ?>
+    
+        <div id="views">
+            <?php include(dirname(__FILE__) . '/content.php'); ?>
+        </div>
+    
     </div>
 
     <?php include($GLOBALS['ROOTPATH'] . '/common/conf/require.php'); ?>
     <script>
         require([
-            '/common/script/base.js'
+            '/common/template/header_x6/index.js',
         ], function() {
-            require([
-                '/common/template/header/index.js',
-                '/common/template/footer/index.js'
-            ], function() {
-                require(['./index']);
-            });
+            require(['./index']);
         });
     </script>
 
